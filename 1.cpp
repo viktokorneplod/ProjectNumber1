@@ -52,7 +52,6 @@ int main()
 	////cout << s << endl;
 	//int a = 5, b = 7;
 	///*cout << a << " " << b << endl;
-	swap(a, b);
 	//cout << a << " " << b << endl;*/
 	//f() = 15;
 	//cout << a<<" "<<f()<<" "<<b << endl;

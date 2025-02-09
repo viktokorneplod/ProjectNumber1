@@ -6,27 +6,14 @@ using std::endl;
 using std::cin;
 using std::string;
 
-void swap(int& a, int& b)
-{
-	int temp = a;
-	a = b;
-	b = temp;
-}
 
+// Смысл этих функций:?
 int& f()
 {
 	static int x = 10;
 	return x;
 }
 
-int foo() {
-	return 1;
-}
-
-int foo(int a, int b)
-{
-	return 2;
-}
 
 int foo(double a, double b)
 {

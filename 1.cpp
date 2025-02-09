@@ -50,7 +50,7 @@ int main()
 	////std::getline(cin, s);
 	////cout << s.c_str() << endl;
 	////cout << s << endl;
-	int a = 5, b = 7;
+	//int a = 5, b = 7;
 	///*cout << a << " " << b << endl;
 	swap(a, b);
 	//cout << a << " " << b << endl;*/
@@ -62,6 +62,7 @@ int main()
 	//const int& ref2 = 5;
 	/*double c = 2.0;
 	cout << foo(c, 3.0) << endl;*/
+	zoo(1, 2, 3);
 	
 
 	return 0;

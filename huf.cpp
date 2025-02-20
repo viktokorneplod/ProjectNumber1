@@ -2,6 +2,7 @@
 #include <fstream>
 #include <queue>
 #include <unordered_map>
+
 huffman_Node* create_Node(char symbol, int freq, huffman_Node* left, huffman_Node* right) {
     huffman_Node* node = new huffman_Node();
     node->symbol = symbol;

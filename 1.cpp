@@ -29,7 +29,7 @@ Node* getNode(char ch, int freq, Node* left, Node* right)
 }
 int main()
 {
-	
+
 
 	return 0;
 }

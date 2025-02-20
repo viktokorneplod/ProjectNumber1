@@ -8,7 +8,7 @@ struct huffman_Node {
     char symbol;
     int freq;
     huffman_Node *left, *right;
-}
+};
 huffman_Node* create_Node(char symbol, int freq, huffman_Node* left, huffman_Node* right);
 struct compareNode {
     bool operator()(huffman_Node* left, huffman_Node* right);

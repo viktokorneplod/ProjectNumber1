@@ -17,7 +17,7 @@ void deCode(huffman_Node* root, int& index, const std::string& inCode_string) {
         std::cout << root->symbol;
         return;
     }
-    index--;
+    index++;
     if (inCode_string[index] == '0') {
         deCode(root->left, index, inCode_string);
     }

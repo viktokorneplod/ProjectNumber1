@@ -1,4 +1,5 @@
-#include "header.h"
+#include "huf.h"
+#include<iostream>
 #include <fstream>
 #include <queue>
 #include <unordered_map>

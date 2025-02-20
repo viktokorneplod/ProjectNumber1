@@ -93,3 +93,7 @@ void build_Huffman_Tree(const std::string& inputFile, const std::string& outputF
     }
     std::cout << std::endl;
 }
+
+bool compareNode::operator()(huffman_Node* left, huffman_Node* right) {
+    return left->freq > right->freq;
+}

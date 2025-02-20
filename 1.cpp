@@ -1,55 +1,35 @@
 #include <iostream>
 #include <string>
-//using namespace std;
-using std::cout;
-using std::endl;
-using std::cin;
-using std::string;
 
-
-// Смысл этих функций:?
-int& f()
+using namespace std;
+// A Tree node
+struct Node
 {
-	static int x = 10;
-	return x;
-}
-
-
-int foo(double a, double b)
+	char ch;
+	int freq;
+	Node *left, *right;
+};
+void encode(Node* root, string str,
+			unordered_map<char, string> &huffmanCode)
 {
-	return 3;
+	if (root == nullptr)
+		return;
+.......}
+
+Node* getNode(char ch, int freq, Node* left, Node* right)
+{
+	Node* node = new Node();
+
+	node->ch = ch;
+	node->freq = freq;
+	node->left = left;
+	node->right = right;
+
+	return node;
 }
-
-void zoo();
-void zoo(int a) {}
-void zoo(int a, int b) {}
-void zoo(int b, int a = 5, int c = 10) {}
-
 int main()
 {
-	cout << "Hello, world!" << endl;
-	//int n = 0;
-	//double b = 0;
-	//cin >> n >> b;
-	//cout << n << " " << b << "\n";*/
-	//string s;
-	////cin >> s;
-	////std::getline(cin, s);
-	////cout << s.c_str() << endl;
-	////cout << s << endl;
-	//int a = 5, b = 7;
-	///*cout << a << " " << b << endl;
-	//swap(a, b);
-	//cout << a << " " << b << endl;*/
-	//f() = 15;
-	//cout << a<<" "<<f()<<" "<<b << endl;
-	//int& ref = a;
-	//ref = b;
-	//cout << a << " " << b << endl;
-	//const int& ref2 = 5;
-	/*double c = 2.0;
-	cout << foo(c, 3.0) << endl;*/
-	zoo(1, 2, 3);
+	
 
 	return 0;
 }

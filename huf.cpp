@@ -1,5 +1,14 @@
 #include "header.h"
 #include <unordered_map>
+huffman_Node* create_Node(char symbol, int freq, huffman_Node* left, huffman_Node* right) {
+    huffman_Node* node = new huffman_Node();
+    node->symbol = symbol;
+    node->freq = freq;
+    node->left = left;
+    node->right = right;
+    return node;
+}
+
 void inCode(huffman_Node* root, std::string code, std::unordered_map<char, std::string>& huffman_Codes) {
     if (root == nullptr) return;
     if (!root->left && !root->right) {

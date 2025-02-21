@@ -23,23 +23,23 @@ void inCode(huffman_Node* root, std::string code, std::unordered_map<char, std::
     inCode(root->right, code + "1", huffman_Codes);
 }
 
-void deCode(huffman_Node* root, int& index, const std::string& inCode_string) {
+void deCode(huffman_Node* root, int& index, const std::string& inCode_string, std::ofstream& outFile) {
     if (root == nullptr) return;
 
     if (!root->left && !root->right) {
-        std::cout << root->symbol;
+        outFile << root->symbol;
         return;
     }
     index++;
     if (inCode_string[index] == '0') {
-        deCode(root->left, index, inCode_string);
+        deCode(root->left, index, inCode_string, outFile);
     }
     else {
-        deCode(root->right, index, inCode_string);
+        deCode(root->right, index, inCode_string, outFile);
     }
 }
 
-void build_Huffman_Tree(const std::string& inputFile, const std::string& outputFile) {
+void build_Huffman_Tree(const std::string& inputFile, const std::string& outputFile, const std::string& decodedOutputFile) {
 
     std::ifstream infile(inputFile);
     if (!infile) {
@@ -73,7 +73,6 @@ void build_Huffman_Tree(const std::string& inputFile, const std::string& outputF
     std::unordered_map<char, std::string> huffmanCodes;
     inCode(root, "", huffmanCodes);
 
-
     std::ofstream outFile(outputFile);
     if (!outFile) {
         std::cerr << "file reading error: " << outputFile << std::endl;
@@ -87,12 +86,19 @@ void build_Huffman_Tree(const std::string& inputFile, const std::string& outputF
 
     outFile << encodedString;
     outFile.close();
-    std::cout << "output: ";
+
+    std::ofstream decodedOutFile(decodedOutputFile);
+    if (!decodedOutFile) {
+        std::cerr << "file reading error: " << decodedOutputFile << std::endl;
+        return;
+    }
+
     int index = -1;
     while (index < (int)encodedString.size() - 2) {
-        deCode(root, index, encodedString);
+        deCode(root, index, encodedString, decodedOutFile);
     }
-    std::cout << std::endl;
+    decodedOutFile.close();
+    std::cout << "Decoding completed. Result written to " << decodedOutputFile << std::endl;
 }
 
 bool compareNode::operator()(huffman_Node* left, huffman_Node* right) {
